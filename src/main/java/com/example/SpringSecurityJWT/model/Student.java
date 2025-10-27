@@ -1,4 +1,4 @@
-package com.example.SpringSecEx.model;
+package com.example.SpringSecurityJWT.model;
 
 public class Student
 {

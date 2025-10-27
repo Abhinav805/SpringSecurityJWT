@@ -1,7 +1,7 @@
-package com.example.SpringSecEx.controller;
+package com.example.SpringSecurityJWT.controller;
 
-import com.example.SpringSecEx.model.Users;
-import com.example.SpringSecEx.service.UserService;
+import com.example.SpringSecurityJWT.model.Users;
+import com.example.SpringSecurityJWT.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

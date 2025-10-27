@@ -1,4 +1,4 @@
-package com.example.SpringSecEx.controller;
+package com.example.SpringSecurityJWT.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;

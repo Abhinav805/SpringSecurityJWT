@@ -1,7 +1,7 @@
-package com.example.SpringSecEx.service;
+package com.example.SpringSecurityJWT.service;
 
-import com.example.SpringSecEx.model.Users;
-import com.example.SpringSecEx.repo.UserRepo;
+import com.example.SpringSecurityJWT.model.Users;
+import com.example.SpringSecurityJWT.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

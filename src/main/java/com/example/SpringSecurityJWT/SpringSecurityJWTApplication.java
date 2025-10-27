@@ -1,13 +1,13 @@
-package com.example.SpringSecEx;
+package com.example.SpringSecurityJWT;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringSecExApplication {
+public class SpringSecurityJWTApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringSecExApplication.class, args);
+		SpringApplication.run(SpringSecurityJWTApplication.class, args);
 	}
 
 }
