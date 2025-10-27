@@ -20,6 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 
 @Configuration
@@ -29,11 +30,15 @@ public class SecurityConfig
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private JwtFilter jwtFilter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception
     {
 
-        return http.csrf(AbstractHttpConfigurer::disable)
+        return http
+                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("register", "login")
                         .permitAll()
@@ -41,6 +46,7 @@ public class SecurityConfig
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
 
         /*http.csrf(customizer-> customizer.disable())
@@ -74,7 +80,7 @@ public class SecurityConfig
        return  config.getAuthenticationManager();
     }
 
-    @Bean
+   /* @Bean
     public UserDetailsService userDetailsService()
     {
         UserDetails user1 = User
@@ -92,5 +98,5 @@ public class SecurityConfig
                 .build();
 
         return new InMemoryUserDetailsManager(user1, user2);
-    }
+    }*/
 }
